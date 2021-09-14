@@ -1,7 +1,7 @@
-from .models import Transaction
+from .models import Profile
 from rest_framework import serializers
 
-class TransactionSerializer(serializers.ModelSerializer):
+class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Transaction
+        model = Profile
         fields = '__all__'

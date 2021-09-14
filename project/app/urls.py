@@ -1,7 +1,7 @@
 from rest_framework import routers
-from .views import TransactionViewSet
+from .views import ProfileViewSet
 
 router = routers.DefaultRouter()
-router.register('transactions', TransactionViewSet, basename='transactions')
+router.register('profiles', ProfileViewSet, basename='profiles')
 
 urlpatterns = router.urls

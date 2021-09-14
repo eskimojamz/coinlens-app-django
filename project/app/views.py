@@ -1,10 +1,10 @@
 from django.shortcuts import render
-from .models import Transaction
+from .models import Profile
 from rest_framework import viewsets, permissions
-from .serializers import TransactionSerializer
+from .serializers import ProfileSerializer
 
 # Create your views here.
-class TransactionViewSet(viewsets.ModelViewSet):
-    queryset = Transaction.objects.all()
-    serializer_class = TransactionSerializer
+class ProfileViewSet(viewsets.ModelViewSet):
+    queryset = Profile.objects.all()
+    serializer_class = ProfileSerializer
     permission_classes = [permissions.AllowAny]
