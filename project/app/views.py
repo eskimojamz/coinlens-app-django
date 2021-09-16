@@ -1,7 +1,7 @@
-# from rest_framework import viewsets
-# from .models import NewUser
-# from .serializers import ProfileSerializer
+from rest_framework import viewsets
+from .models import UserProf
+from .serializers import UserSerializer
 
-# class ProfileViewSet(viewsets.ModelViewSet):
-#     queryset = NewUser.objects.all()
-#     serializer_class = ProfileSerializer
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = UserProf.objects.all()
+    serializer_class = UserSerializer
