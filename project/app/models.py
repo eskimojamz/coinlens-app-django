@@ -4,12 +4,11 @@ from django.utils.translation import ugettext_lazy as _
 
 # Create your models here.
 class UserProf(AbstractUser):
-    username = models.CharField(max_length=20, unique=True)
     email = models.EmailField(_('email address'), unique=True)
     followed_coins = models.JSONField(blank=True, default=dict)
 
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = []
+    USERNAME_FIELD = 'username'
+    REQUIRED_FIELDS = ['email']
 
     def __str__(self):
-        return self.email
+        return self.username

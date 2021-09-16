@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',
     'app',
     'rest_framework',
     'rest_framework.authtoken',
@@ -129,3 +128,5 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'app.UserProf'
+
+CORS_ORIGIN_WHITELIST = ['http://localhost:3000']
