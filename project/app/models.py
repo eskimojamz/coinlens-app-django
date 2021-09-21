@@ -9,7 +9,7 @@ class UserProf(models.Model):
     followed_coins = models.TextField(max_length=None)
 
     def __str__(self):
-        return self.user.username
+        return self
 
 @receiver(post_save, sender=User)
 def update_user_profile(sender, instance, created, **kwargs):
