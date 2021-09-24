@@ -7,6 +7,12 @@ from rest_framework.response import Response
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+    authentication_classes = [authentication.TokenAuthentication, ]
+    permission_classes = [permissions.IsAuthenticated, ]
+
+    def get_queryset(self):
+        return self.queryset.filter(username=self.request.user)
+
 
 class UserProfViewSet(viewsets.ModelViewSet):
     queryset = UserProf.objects.all()
@@ -16,8 +22,4 @@ class UserProfViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         return self.queryset.filter(user=self.request.user)
-    
-    # def update(self, request, *args, **kwargs):
-    #     kwargs['partial'] = True
-    #     return super().update(request, *args, **kwargs)
 
